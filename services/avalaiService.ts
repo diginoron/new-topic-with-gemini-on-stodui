@@ -1,10 +1,15 @@
-// @google/genai: Always use `import {GoogleGenAI} from "@google/genai";`.
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { Topic } from "../types";
 
 // @google/genai: The API key must be obtained exclusively from `process.env.API_KEY`.
 // @google/genai: Do not define `process.env` or request that the user update the API_KEY in the code.
+// For client-side Vite applications, VITE_ prefixed variables are exposed via import.meta.env
+// Fix: Replace import.meta.env.VITE_API_KEY with process.env.API_KEY as per coding guidelines.
 const API_KEY = process.env.API_KEY;
+
+// @google/genai: The API key is assumed to be pre-configured, valid, and accessible.
+// Do not generate any UI elements or code snippets for entering or managing the API key.
+// Fix: Remove the manual API key validation check as it's assumed to be handled externally.
 
 // @google/genai: Always use `const ai = new GoogleGenAI({apiKey: process.env.API_KEY});`.
 const ai = new GoogleGenAI({ apiKey: API_KEY });

@@ -1,12 +1,13 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { Topic } from "../types";
 
-// The API key must be obtained exclusively from `process.env.API_KEY`.
+// As per @google/genai coding guidelines, the API key must be obtained exclusively from `process.env.API_KEY`.
 const API_KEY = process.env.API_KEY;
 
-// Do not generate any UI elements or code snippets for entering or managing the API key.
 if (!API_KEY) {
-  throw new Error("API_KEY is missing. Please ensure it is set as an environment variable.");
+  throw new Error(
+    "API_KEY is missing. Please ensure it is set as an environment variable."
+  );
 }
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });

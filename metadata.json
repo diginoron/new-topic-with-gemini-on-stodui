@@ -1,0 +1,5 @@
+{
+  "name": "Thesis Topic Generator",
+  "description": "An AI-powered web application that suggests five engaging and practical thesis topics based on user-provided keywords.",
+  "requestFramePermissions": []
+}
